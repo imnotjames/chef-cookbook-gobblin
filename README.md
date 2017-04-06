@@ -26,6 +26,15 @@ variety of data sources.
 | ['gobblin']['install']['distribution-url'] | String | URL for distribution tarfile | "https://github.com/linkedin/gobblin/releases/download/gobblin_#{node['gobblin']['version']}/gobblin-distribution-#{node['gobblin']['version']}.tar.gz" |
 | ['gobblin']['install']['distribution-checksum'] | String | Distribution tarfile checksum | 'b1b236e5409ff10810daf310664fd0667cc358cd2937c7ff68e0845dd8fa182a' |
 
+### gobblin::standalone
+
+| Key | Type   | Description | Default |
+|-----|--------|------------ |---------|
+| ['gobblin']['standalone']['work-directory'] | String | The Standalone working directory. | "#{node['gobblin']['home-directory']}" |
+| ['gobblin']['standalone']['config-directory'] | String | The Standalone config directory. |  '/etc/gobblin/standalone' |
+| ['gobblin']['standalone']['heap-minimum'] | String | The standalone heap size minimum. | '1g' |
+| ['gobblin']['standalone']['heap-maximum'] | String | The standalone heap size maximum. | '2g' |
+
 ## Recipes
 
 ### gobblin::default
@@ -35,3 +44,7 @@ The default runs `gobblin::default`
 ### gobblin::install
 
 Downloads the Gobblin framework and installs it.
+
+### gobblin::standalone
+
+Sets up the Gobblin Standalone runner.

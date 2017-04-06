@@ -1,0 +1,45 @@
+
+# Thread pool settings for the task executor
+taskexecutor.threadpool.size=2
+taskretry.threadpool.coresize=1
+taskretry.threadpool.maxsize=2
+
+# File system URIs
+fs.uri=file:///
+writer.fs.uri=${fs.uri}
+state.store.fs.uri=${fs.uri}
+
+# Writer related configuration properties
+writer.staging.dir=<%= @gobblin_work_dir %>/task-staging
+writer.output.dir=<%= @gobblin_work_dir %>/task-output
+
+# Data publisher related configuration properties
+data.publisher.replace.final.dir=false
+
+# Directory where job configuration files are stored
+jobconf.dir=<%= @gobblin_job_config_dir %>
+jobconf.fullyQualifiedPath=file://<%= @gobblin_job_config_dir %>
+
+# Directory where job/task state files are stored
+state.store.dir=<%= @gobblin_work_dir %>/state-store
+
+# Directory where commit sequences are stored
+gobblin.runtime.commit.sequence.store.dir=<%= @gobblin_work_dir %>/commit-sequence-store
+
+# Directory where error files from the quality checkers are stored
+qualitychecker.row.err.file=<%= @gobblin_work_dir %>/err
+
+# Directory where job locks are stored
+job.lock.dir=<%= @gobblin_work_dir %>/locks
+
+# Directory where metrics log files are stored
+metrics.log.dir=<%= @gobblin_work_dir %>/metrics
+
+# Interval of task state reporting in milliseconds
+task.status.reportintervalinms=5000
+
+# The time gap for Job Detector to detect modification/deletion/creation of jobconfig.
+# Unit in milliseconds, configurable.
+jobconf.monitor.interval=30000
+
+task.maxretries=0

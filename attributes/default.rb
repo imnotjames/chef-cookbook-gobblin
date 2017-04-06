@@ -12,3 +12,8 @@ default['gobblin']['home-directory'] = '/home/gobblin'
 
 default['gobblin']['install']['distribution-url'] = "https://github.com/linkedin/gobblin/releases/download/gobblin_#{node['gobblin']['version']}/gobblin-distribution-#{node['gobblin']['version']}.tar.gz"
 default['gobblin']['intstall']['distribution-checksum'] = 'b1b236e5409ff10810daf310664fd0667cc358cd2937c7ff68e0845dd8fa182a'
+
+default['gobblin']['standalone']['work-directory'] = "#{node['gobblin']['home-directory']}"
+default['gobblin']['standalone']['config-directory'] = '/etc/gobblin/standalone'
+default['gobblin']['standalone']['heap-minimum'] = '1g'
+default['gobblin']['standalone']['heap-maximum'] = '2g'

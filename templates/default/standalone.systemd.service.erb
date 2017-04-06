@@ -1,0 +1,15 @@
+[Unit]
+Description=Gobblin Standalone Service
+After=network.target
+
+[Service]
+Type=simple
+User=<%= @gobblin_user %>
+Group=<%= @gobblin_group %>
+Restart=on-failure
+WorkingDirectory=<%= @gobblin_install_dir %>/current
+ExecStart=<%= @gobblin_install_dir %>/current/bin/gobblin-standalone.sh start --fwdir "<%= @gobblin_install_dir%>" --logdir="<%= @gobblin_log_dir %>" --conf="<%= @gobblin_job_dir %>"
+ExecStop=<%= @gobblin_install_dir %>/current/bin/gobblin-standalone.sh stop
+
+[Install]
+WantedBy=multi-user.target
